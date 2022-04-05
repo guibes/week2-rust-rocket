@@ -1,9 +1,11 @@
-/*--------------------------------------------------------------------------------------------------------------
- * Copyright (c) Microsoft Corporation. All rights reserved.
- * Licensed under the MIT License. See https://go.microsoft.com/fwlink/?linkid=2090316 for license information.
- *-------------------------------------------------------------------------------------------------------------*/
+#![feature(proc_macro_hygiene, decl_macro)]
 
-fn main() {
-    let name = "VS Code Remote - Containers";
-    println!("Hello, {}!", name);
+#[macro_use] extern crate rocket;
+#[get("/")]
+fn index() -> &'static str {
+    "Hello, world!"
+}
+
+fn main() { 
+    rocket::ignite().mount("/", routes![index]).launch();
 }
