@@ -9,8 +9,8 @@
             "cargo": {
                 "args": [
                     "build",
-                    "--bin=hello_remote_world",
-                    "--package=hello_remote_world",
+                    "--bin=week2_rust_rocket",
+                    "--package=week2_rust_rocket",
                     "--manifest-path=Cargo.toml"
                 ],
                 "filter": {
